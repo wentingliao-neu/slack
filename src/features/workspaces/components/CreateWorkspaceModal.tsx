@@ -9,16 +9,16 @@ import {
 import useCreateWorkspaceModal from "../store/useCreateWorkspaceModal";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
-import useCreateWorkspace from "../api/useCreateWorkspace";
 import React, { useState } from "react";
 import { useRouter } from "next/navigation";
 import { toast } from "sonner";
+import useMutateWorkspace from "../api/useMutateWorkspace";
 
 export default function CreateWorkspaceModal() {
    const [open, setOpen] = useCreateWorkspaceModal();
    const [name, setName] = useState("");
    const router = useRouter();
-   const { mutate, isPending } = useCreateWorkspace();
+   const { mutate, isPending } = useMutateWorkspace({ mutationType: "create" }); //useCreateWorkspace();
    const handleClose = () => {
       setOpen(false);
       setName("");

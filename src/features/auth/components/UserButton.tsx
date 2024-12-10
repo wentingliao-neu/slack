@@ -26,9 +26,9 @@ export default function UserButton() {
    return (
       <DropdownMenu>
          <DropdownMenuTrigger className=" outline-none relative">
-            <Avatar>
+            <Avatar className=" rounded-md">
                <AvatarImage src={image} />
-               <AvatarFallback className=" bg-violet-500 text-white">
+               <AvatarFallback className=" bg-violet-500 text-white rounded-md">
                   {name?.[0].toUpperCase()}
 
                   {/* <User /> */}
